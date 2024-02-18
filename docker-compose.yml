@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  voting-api:
+    image: ${DOCKER_REGISTRY-}votingapi
+    build:
+      context: .
+      dockerfile: Voting-API/Dockerfile
