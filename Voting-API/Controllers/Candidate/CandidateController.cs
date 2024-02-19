@@ -23,7 +23,7 @@ namespace Voting_API.Controllers.Candidate
 		/// </summary>
 		/// <param name="candidatesRequest"></param>
 		/// <returns></returns>
-		[HttpGet]
+		[HttpPost]
         [Route("Candidates")]
         [Consumes("application/json")]
         [ProducesResponseType(typeof(CandidateListResponseDto), (int)HttpStatusCode.OK)]

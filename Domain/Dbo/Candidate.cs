@@ -1,4 +1,6 @@
-﻿namespace Domain.Dbo
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Domain.Dbo
 {
     /// <summary>
     /// The entity representing the candidate
@@ -8,6 +10,7 @@
         public string Name { get; set; }
         public string LastName { get; set; }
         public string OpinionBrief { get; set; }
+        public int CandidateNumber { get; set; }
         public int Votes { get; set; }
     }
 }

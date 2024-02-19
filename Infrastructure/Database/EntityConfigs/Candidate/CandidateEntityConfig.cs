@@ -1,4 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using System.Xml.Schema;
 
 namespace Infrastructure.Database.EntityConfigs.Candidate
 {
@@ -15,6 +17,7 @@ namespace Infrastructure.Database.EntityConfigs.Candidate
             builder.Property(x=>x.Name).IsRequired(true);
             builder.Property(x=>x.LastName).IsRequired(true);
             builder.Property(x=>x.OpinionBrief).IsRequired(false);
+            builder.Property(x => x.CandidateNumber).UseIdentityColumn(1,1);
         }
     }
 }
