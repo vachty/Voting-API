@@ -26,5 +26,32 @@ namespace Voting_API.Extensions
 
             return app;
         }
+
+        /// <summary>
+		/// Set ups the swagger
+		/// </summary>
+		/// <param name="app"></param>
+		/// <returns></returns>
+		/// <exception cref="ArgumentNullException"></exception>
+		public static WebApplication SetSwaggerUI(this WebApplication app)
+        {
+            if (app == null)
+            {
+                throw new ArgumentNullException(nameof(app));
+            }
+
+            // Configure the HTTP request pipeline.
+            if (app.Environment.IsDevelopment())
+            {
+                app.UseSwagger();
+                app.UseSwaggerUI(x =>
+                {
+                    x.SwaggerEndpoint($"/swagger/v1/swagger.json", Constants.Constants.ApiTitleV1);
+                    x.SwaggerEndpoint($"/swagger/v2/swagger.json", Constants.Constants.ApiTitleV2);
+                });
+            }
+
+            return app;
+        }
     }
 }

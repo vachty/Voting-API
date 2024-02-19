@@ -10,8 +10,8 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
 COPY ["Voting-API/Voting-API.csproj", "Voting-API/"]
-COPY ["Voting-API/Infrastructure.csproj", "Voting-API/"]
-COPY ["Voting-API/Domain.csproj", "Voting-API/"]
+COPY ["Infrastructure/Infrastructure.csproj", "Voting-API/"]
+COPY ["Domain/Domain.csproj", "Voting-API/"]
 RUN dotnet restore "./Voting-API/Voting-API.csproj"
 COPY . .
 WORKDIR "/src/Voting-API"

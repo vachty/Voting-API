@@ -1,8 +1,24 @@
 version: '3.4'
 
 services:
+  rabbitmq:
+    container_name: rabbitmq
+    hostname: rabbitmq
+    image: rabbitmq:3-management-alpine
+    ports:
+      - "7100:15672"
+      - "7101:5672"
+    volumes:
+      - rabbitmq:/rabbitmq
+
   voting-api:
+    depends_on: 
+        - rabbitmq
+    container_name: voting-api-container
     image: ${DOCKER_REGISTRY-}votingapi
     build:
       context: .
       dockerfile: Voting-API/Dockerfile
+
+volumes:
+    rabbitmq:
