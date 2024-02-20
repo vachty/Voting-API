@@ -7,7 +7,8 @@
       "composeLaunchServiceName": "voting-api",
       "composeLaunchUrl": "{Scheme}://localhost:{ServicePort}/swagger",
       "serviceActions": {
-        "voting-api": "StartDebugging"
+        "voting-api": "StartDebugging",
+        "electing-api": "StartDebugging"
       }
     }
   }

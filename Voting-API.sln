@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "Infrastru
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{C6E7B38E-540B-425B-BEB3-D2FB4ECADEC1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service", "Service\Service.csproj", "{DB3C23B7-94DC-4730-8DC2-7C26353C2EAA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Service", "Service\Service.csproj", "{DB3C23B7-94DC-4730-8DC2-7C26353C2EAA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Electing-API", "Electing-API\Electing-API.csproj", "{DA5D060A-C11F-4F3B-ADAB-23DE2A28AF19}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{DB3C23B7-94DC-4730-8DC2-7C26353C2EAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DB3C23B7-94DC-4730-8DC2-7C26353C2EAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DB3C23B7-94DC-4730-8DC2-7C26353C2EAA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA5D060A-C11F-4F3B-ADAB-23DE2A28AF19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA5D060A-C11F-4F3B-ADAB-23DE2A28AF19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA5D060A-C11F-4F3B-ADAB-23DE2A28AF19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA5D060A-C11F-4F3B-ADAB-23DE2A28AF19}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

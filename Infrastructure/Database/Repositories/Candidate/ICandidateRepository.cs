@@ -5,5 +5,6 @@
     /// </summary>
     public interface ICandidateRepository : IBaseRepository <Domain.Dbo.Candidate>
     {
+        Task<List<Domain.Dbo.Candidate>> GetCandidateByVoteNumbers(List<int> voteNumbers);
     }
 }

@@ -39,6 +39,7 @@ namespace Service.Handlers.Candidate
                 var candidatesResult = await candidateRepository.GetAllAsync();
                 if (!candidatesResult.Any())
                 {
+                    result.AddError(new Exception("No candidate found."));
                     result.ErrorCode = "204";
                     return result;
                 }

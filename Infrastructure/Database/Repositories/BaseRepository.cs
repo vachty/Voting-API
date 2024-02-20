@@ -86,6 +86,23 @@ namespace Infrastructure.Database.Repositories
             Entities.Update(entity);
         }
 
+        /// <inheritdoc/>
+        public virtual void UpdateMany(IList<TEntity> entities)
+        {
+            if (!entities.Any())
+            {
+                throw new InvalidOperationException("No entities for update!");
+            }
+
+            foreach(TEntity entity in entities)
+            {
+                entity.UpdateAuthor = Constants.Constants.SystemName;
+                entity.UpdateDate = DateTime.Now;
+            }
+
+            Entities.UpdateRange(entities);
+        }
+
         /// <summary>
         /// Get all internally
         /// </summary>

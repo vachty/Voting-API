@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Service.Dtos;
 using Service.Results;
 
-namespace Voting_API.Controllers
+namespace Electing_API.Controllers
 {
     /// <summary>
 	/// The Base Controller

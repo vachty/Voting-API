@@ -20,5 +20,13 @@ services:
       context: .
       dockerfile: Voting-API/Dockerfile
 
+  electing-api:
+    depends_on:
+        - rabbitmq
+    image: ${DOCKER_REGISTRY-}electingapi
+    build:
+      context: .
+      dockerfile: Electing-API/Dockerfile
+
 volumes:
     rabbitmq:

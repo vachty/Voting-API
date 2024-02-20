@@ -18,6 +18,12 @@ namespace Infrastructure.Database.Repositories
         void Update(TEntity entity);
 
         /// <summary>
+        /// Update the entities in the storage
+        /// </summary>
+        /// <param name="entities"></param>
+        void UpdateMany(IList<TEntity> entities);
+
+        /// <summary>
         /// Deletes the entity in storage
         /// </summary>
         /// <param name="entity"></param>

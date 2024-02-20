@@ -24,11 +24,11 @@ namespace Voting_API.Controllers.Candidate
 		/// <param name="candidatesRequest"></param>
 		/// <returns></returns>
 		[HttpPost]
-        [Route("Candidates")]
+        [Route("SearchList")]
         [Consumes("application/json")]
         [ProducesResponseType(typeof(CandidateListResponseDto), (int)HttpStatusCode.OK)]
         [SwaggerRequestExample(typeof(CandidateListRequestDto), typeof(CandidateListRequestDtoExample))]
-        public async Task<IActionResult> GetCandidates([FromBody] CandidateListRequestDto candidatesRequest)
+        public async Task<IActionResult> Search([FromBody] CandidateListRequestDto candidatesRequest)
         {
             return ApiResponse(await Mediator.Send(candidatesRequest));
         }

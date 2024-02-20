@@ -5,7 +5,7 @@ using Infrastructure.Database.Repositories.Candidate;
 using Infrastructure.Database.Repositories.Election;
 using Microsoft.EntityFrameworkCore;
 
-namespace Voting_API.Extensions
+namespace Electing_API.Extensions
 {
     public static class ServiceRegistrations
     {

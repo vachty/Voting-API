@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-
-namespace Domain.Dbo
+﻿namespace Domain.Dbo
 {
     /// <summary>
     /// The entity representing the candidate
