@@ -1,0 +1,85 @@
+{
+	"info": {
+		"_postman_id": "ff09d580-baf5-4d0e-b29b-2c0b1786c8cd",
+		"name": "VotingApi_ElectingApi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33034167"
+	},
+	"item": [
+		{
+			"name": "Candidate",
+			"item": [
+				{
+					"name": "GetCandidateList",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:54271/api/v1/candidate/searchlist",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "54271",
+							"path": [
+								"api",
+								"v1",
+								"candidate",
+								"searchlist"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Election",
+			"item": [
+				{
+					"name": "New Request",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Name\": \"Lukas\",\r\n    \"LastName\": \"Vachtarcik\",\r\n    \"IdentityCardId\": \"97980607\",\r\n    \"UpVotes\": [1,4],\r\n    \"DownVotes\": [2]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:54273/api/v1/election/create",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "54273",
+							"path": [
+								"api",
+								"v1",
+								"election",
+								"create"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
