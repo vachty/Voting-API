@@ -14,7 +14,7 @@ services:
   voting-api:
     depends_on: 
         - rabbitmq
-    container_name: voting-api-container
+    container_name: VOTING_API
     image: ${DOCKER_REGISTRY-}votingapi
     build:
       context: .
@@ -23,6 +23,7 @@ services:
   electing-api:
     depends_on:
         - rabbitmq
+    container_name: ELECTING_API
     image: ${DOCKER_REGISTRY-}electingapi
     build:
       context: .
