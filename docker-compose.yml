@@ -8,6 +8,9 @@ services:
     ports:
       - "7100:15672"
       - "7101:5672"
+    environment:
+        RABBITMQ_DEFAULT_USER: guest
+        RABBITMQ_DEFAULT_PASS: guest
     volumes:
       - rabbitmq:/rabbitmq
 

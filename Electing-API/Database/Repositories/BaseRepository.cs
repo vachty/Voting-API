@@ -3,6 +3,10 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Electing_API.Database.Repositories
 {
+    /// <summary>
+    /// The base repository
+    /// </summary>
+    /// <typeparam name="TEntity"></typeparam>
     public abstract class BaseRepository<TEntity> : IBaseRepository<TEntity>
         where TEntity : class, IBaseEntity
     {

@@ -2,6 +2,9 @@ using Voting_API.Service.Handlers;
 using System.Reflection;
 using Voting_API.Extensions;
 using Voting_API.Service.Mappers;
+using MassTransit;
+using Shared.Contracts;
+using Voting_API.Service.Consumers;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,6 +25,23 @@ builder.Services.AddVotingApiDbContext(builder.Configuration);
 
 builder.Services.SetUpRoutes();
 builder.Services.AddSwagger();
+
+builder.Services.AddMassTransit(bus =>
+{
+    bus.SetKebabCaseEndpointNameFormatter();
+    bus.AddConsumer<ElectionCreatedConsumer>();
+
+    bus.UsingRabbitMq((context, configurator) =>
+    {
+        configurator.Host(new Uri(builder.Configuration["MessageBroker:Host"]!), cfg =>
+        {
+            cfg.Username(builder.Configuration["MessageBroker:Username"]);
+            cfg.Username(builder.Configuration["MessageBroker:Password"]);
+        });
+
+        configurator.ConfigureEndpoints(context);
+    });
+});
 
 var app = builder.Build();
 

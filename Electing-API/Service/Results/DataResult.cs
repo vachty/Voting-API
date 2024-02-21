@@ -6,6 +6,7 @@
     /// <typeparam name="TData"></typeparam>
     public class DataResult<TData> : Result, IDataResult<TData>
     {
+        /// <inheritdoc/>
         public TData Data { get; set; }
     }
 }

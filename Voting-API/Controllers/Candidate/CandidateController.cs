@@ -9,11 +9,17 @@ using Voting_API.Examples;
 
 namespace Voting_API.Controllers.Candidate
 {
+    /// <summary>
+    /// The Candidate controller
+    /// </summary>
     [ApiVersion("1.0")]
     [ApiExplorerSettings(GroupName = "v1")]
     public class CandidateController : BaseController
     {
-      
+        /// <summary>
+        /// Create instance of CandidateController
+        /// </summary>
+        /// <param name="mediator"></param>
         public CandidateController(IMediator mediator) : base(mediator)
         {
         }
@@ -23,7 +29,7 @@ namespace Voting_API.Controllers.Candidate
 		/// </summary>
 		/// <param name="candidatesRequest"></param>
 		/// <returns></returns>
-		[HttpPost]
+		[HttpGet]
         [Route("SearchList")]
         [Consumes("application/json")]
         [ProducesResponseType(typeof(CandidateListResponseDto), (int)HttpStatusCode.OK)]

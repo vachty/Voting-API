@@ -2,6 +2,10 @@
 
 namespace Electing_API.Database.Repositories
 {
+    /// <summary>
+    /// The Base repository interface
+    /// </summary>
+    /// <typeparam name="TEntity"></typeparam>
     public interface IBaseRepository<TEntity>
             where TEntity : class, IBaseEntity
     {

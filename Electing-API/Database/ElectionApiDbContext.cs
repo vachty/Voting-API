@@ -4,6 +4,9 @@ using Electing_API.Database.Domain.Dbo;
 
 namespace Electing_API.Database
 {
+    /// <summary>
+    /// The election microservice dbcontext
+    /// </summary>
     public class ElectionApiDbContext : DbContext, IElectionApiDbContext
     {
         /// <summary>

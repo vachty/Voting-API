@@ -6,6 +6,9 @@ using Microsoft.OpenApi.Models;
 
 namespace Voting_API.Extensions
 {
+    /// <summary>
+    /// The ServiceExtensions
+    /// </summary>
     public static class ServiceExtensions
     {
         /// <summary>
@@ -86,13 +89,6 @@ namespace Voting_API.Extensions
                 {
                     Version = version,
                     Title = title + " V1",
-                    Contact = contact
-                });
-
-                x.SwaggerDoc("v2", new OpenApiInfo()
-                {
-                    Version = version,
-                    Title = title + " V2",
                     Contact = contact
                 });
 

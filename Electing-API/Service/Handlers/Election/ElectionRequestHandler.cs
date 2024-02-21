@@ -1,8 +1,10 @@
-﻿using Electing_API.Service.Dtos.Election.Request;
-using Electing_API.Service.Dtos.Election.Response;
-using Electing_API.Service.Handlers;
-using Electing_API.Service.Results;
+﻿using AutoMapper;
 using Electing_API.Database.Repositories.Election;
+using Electing_API.Service.Dtos.Election.Request;
+using Electing_API.Service.Dtos.Election.Response;
+using Electing_API.Service.Results;
+using MassTransit;
+using Shared.Contracts;
 
 namespace Electing_API.Service.Handlers.Election
 {
@@ -17,12 +19,26 @@ namespace Electing_API.Service.Handlers.Election
         private readonly IElectionRepository electionRepository;
 
         /// <summary>
+        /// The auto mapper
+        /// </summary>
+        private readonly IMapper mapper;
+
+        /// <summary>
+        /// The masstransit endpoint
+        /// </summary>
+        private readonly IPublishEndpoint publishEndpoint;
+
+        /// <summary>
         /// Create instance of ElectionRequestHandler
         /// </summary>
         /// <param name="electionRepository"></param>
-        public ElectionRequestHandler(IElectionRepository electionRepository)
+        /// <param name="mapper"></param>
+        /// <param name="publishEndpoint"></param>
+        public ElectionRequestHandler(IElectionRepository electionRepository, IMapper mapper, IPublishEndpoint publishEndpoint)
         {
             this.electionRepository = electionRepository;
+            this.mapper = mapper;
+            this.publishEndpoint = publishEndpoint;
         }
 
         /// <inheritdoc/>
@@ -49,15 +65,12 @@ namespace Electing_API.Service.Handlers.Election
                     return result;
                 }
 
-                var electionEntity = new Database.Domain.Dbo.Election()
-                {
-                    IdentityCardId = request.IdentityCardId,
-                    Name = request.Name,
-                    LastName = request.LastName
-                };
+                var electionEntity = mapper.Map<ElectionRequestDto,Database.Domain.Dbo.Election>(request);
 
                 electionRepository.Insert(electionEntity);
                 await electionRepository.SaveAsync();
+
+                await publishEndpoint.Publish(mapper.Map<Database.Domain.Dbo.Election, ElectionCreatedEvent>(electionEntity));
             }
             catch (Exception ex)
             {

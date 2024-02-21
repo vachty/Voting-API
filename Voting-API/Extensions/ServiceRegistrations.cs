@@ -5,6 +5,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Voting_API.Extensions
 {
+    /// <summary>
+    /// The ServiceRegistrations extension
+    /// </summary>
     public static class ServiceRegistrations
     {
         /// <summary>

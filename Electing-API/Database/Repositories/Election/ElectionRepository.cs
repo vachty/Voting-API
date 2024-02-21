@@ -7,6 +7,10 @@ namespace Electing_API.Database.Repositories.Election
     /// </summary>
     public class ElectionRepository : BaseRepository<Domain.Dbo.Election>, IElectionRepository
     {
+        /// <summary>
+        /// Create instance of ElectionRepository
+        /// </summary>
+        /// <param name="dbContext"></param>
         public ElectionRepository(DbContext dbContext) : base(dbContext)
         {
         }

@@ -7,6 +7,10 @@ namespace Voting_API.Database.Repositories.Candidate
     /// </summary>
     public class CandidateRepository : BaseRepository<Domain.Dbo.Candidate>, ICandidateRepository
     {
+        /// <summary>
+        /// Create instance of CandidateRepository
+        /// </summary>
+        /// <param name="dbContext"></param>
         public CandidateRepository(DbContext dbContext) : base(dbContext)
         {
         }

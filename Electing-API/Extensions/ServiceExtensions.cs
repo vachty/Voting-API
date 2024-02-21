@@ -6,6 +6,9 @@ using Microsoft.OpenApi.Models;
 
 namespace Electing_API.Extensions
 {
+    /// <summary>
+    /// The service extensions
+    /// </summary>
     public static class ServiceExtensions
     {
         /// <summary>
@@ -77,7 +80,7 @@ namespace Electing_API.Extensions
                 Url = new Uri("https://github.com/vachty/Voting-API")
             };
 
-            var title = "Voting service API";
+            var title = "Election service API";
             var version = "v1";
 
             services.AddSwaggerGen(x =>
@@ -86,13 +89,6 @@ namespace Electing_API.Extensions
                 {
                     Version = version,
                     Title = title + " V1",
-                    Contact = contact
-                });
-
-                x.SwaggerDoc("v2", new OpenApiInfo()
-                {
-                    Version = version,
-                    Title = title + " V2",
                     Contact = contact
                 });
 

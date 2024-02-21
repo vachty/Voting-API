@@ -8,10 +8,17 @@ using System.Net;
 
 namespace Electing_API.Controllers.Election
 {
+    /// <summary>
+    /// The Election Controller
+    /// </summary>
     [ApiVersion("1.0")]
     [ApiExplorerSettings(GroupName = "v1")]
     public class ElectionController : BaseController
     {
+        /// <summary>
+        /// Create instance of the ElectionController
+        /// </summary>
+        /// <param name="mediator"></param>
         public ElectionController(IMediator mediator) : base(mediator)
         {
         }

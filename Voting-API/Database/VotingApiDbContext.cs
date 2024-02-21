@@ -4,6 +4,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Voting_API.Database
 {
+    /// <summary>
+    /// The voting api microservice db context
+    /// </summary>
     public class VotingApiDbContext : DbContext, IVotingApiDbContext
     {
         /// <summary>

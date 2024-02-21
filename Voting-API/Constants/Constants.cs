@@ -5,9 +5,14 @@
     /// </summary>
     public static class Constants
     {
+        /// <summary>
+        /// The swagger api title
+        /// </summary>
         public static string ApiTitleV1 = "Voting service API V1";
-        public static string ApiTitleV2 = "Voting service API V2";
 
+        /// <summary>
+        /// System name
+        /// </summary>
         public static string SystemName = "VotingAPISystem";
     }
 }

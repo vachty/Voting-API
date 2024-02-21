@@ -2,11 +2,13 @@
 using Voting_API.Database.Repositories.Candidate;
 using Voting_API.Service.Dtos.Candidate.Request;
 using Voting_API.Service.Dtos.Candidate.Response;
-using Voting_API.Service.Handlers;
 using Voting_API.Service.Results;
 
 namespace Voting_API.Service.Handlers.Candidate
 {
+    /// <summary>
+    /// The Candidate list request handler
+    /// </summary>
     public class CandidateListRequestHandler : BaseHandler<CandidateListRequestDto, CandidateListResponseDto>
     {
         /// <summary>
