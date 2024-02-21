@@ -29,6 +29,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Shared\Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Update="Database\Sql\CandidatesDataSeed.sql">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
