@@ -1,0 +1,36 @@
+version: '3.4'
+
+services:
+  rabbitmq:
+    container_name: rabbitmq
+    hostname: rabbitmq
+    image: rabbitmq:3-management-alpine
+    ports:
+      - "7100:15672"
+      - "7101:5672"
+    environment:
+        RABBITMQ_DEFAULT_USER: guest
+        RABBITMQ_DEFAULT_PASS: guest
+    volumes:
+      - rabbitmq:/rabbitmq
+
+  voting-api:
+    depends_on: 
+        - rabbitmq
+    container_name: VOTING_API
+    image: ${DOCKER_REGISTRY-}votingapi
+    build:
+      context: .
+      dockerfile: Voting-API/Dockerfile
+
+  electing-api:
+    depends_on:
+        - rabbitmq
+    container_name: ELECTING_API
+    image: ${DOCKER_REGISTRY-}electingapi
+    build:
+      context: .
+      dockerfile: Electing-API/Dockerfile
+
+volumes:
+    rabbitmq:
