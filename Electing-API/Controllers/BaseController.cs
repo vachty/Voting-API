@@ -1,7 +1,7 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Service.Dtos;
-using Service.Results;
+using Electing_API.Service.Dtos;
+using Electing_API.Service.Results;
 
 namespace Electing_API.Controllers
 {

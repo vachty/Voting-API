@@ -1,4 +1,4 @@
-﻿using Infrastructure.Database;
+﻿using Electing_API.Database;
 using Microsoft.EntityFrameworkCore;
 
 namespace Electing_API.Extensions
@@ -18,7 +18,7 @@ namespace Electing_API.Extensions
 
             using (var serviceScope = app.Services.GetRequiredService<IServiceScopeFactory>().CreateScope())
             {
-                using (var context = serviceScope.ServiceProvider.GetRequiredService<VotingApiDbContext>())
+                using (var context = serviceScope.ServiceProvider.GetRequiredService<ElectionApiDbContext>())
                 {
                     context.Database.Migrate();
                 }

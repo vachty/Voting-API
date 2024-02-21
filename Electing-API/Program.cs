@@ -1,6 +1,7 @@
 using Electing_API.Extensions;
 using System.Reflection;
-using Service.Handlers;
+using Electing_API.Service.Handlers;
+using Electing_API.Service.Mappers;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,7 +16,7 @@ builder.Services.AddSwaggerGen();
  * Dependency injection
  */
 builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(typeof(BaseHandler<,>).GetTypeInfo().Assembly));
-builder.Services.AddAutoMapper(Assembly.GetAssembly(typeof(Service.Mappers.DomainToDtoMappingProfile)));
+builder.Services.AddAutoMapper(Assembly.GetAssembly(typeof(DomainToDtoMappingProfile)));
 builder.Services.RegisterServices();
 
 //add the database
@@ -32,6 +33,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+//apply and use migrations to the database
+app.UseMigrations();
 
 app.UseHttpsRedirection();
 

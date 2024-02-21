@@ -1,8 +1,6 @@
-﻿using Infrastructure.Database;
-using Infrastructure.Database.EntityConfigs.Candidate;
-using Infrastructure.Database.EntityConfigs.Election;
-using Infrastructure.Database.Repositories.Candidate;
-using Infrastructure.Database.Repositories.Election;
+﻿using Electing_API.Database;
+using Electing_API.Database.EntityConfigs.Election;
+using Electing_API.Database.Repositories.Election;
 using Microsoft.EntityFrameworkCore;
 
 namespace Electing_API.Extensions
@@ -17,15 +15,13 @@ namespace Electing_API.Extensions
 		public static IServiceCollection RegisterServices(this IServiceCollection services)
         {
             //entity configs
-            services.AddScoped<ICandidateEntityConfig, CandidateEntityConfig>();
             services.AddScoped<IElectionEntityConfig, ElectionEntityConfig>();
 
             //repositories
-            services.AddScoped<ICandidateRepository, CandidateRepository>();
             services.AddScoped<IElectionRepository, ElectionRepository>();
 
             //dbcontext
-            services.AddScoped<DbContext, VotingApiDbContext>();
+            services.AddScoped<DbContext, ElectionApiDbContext>();
 
             return services;
         }

@@ -1,8 +1,8 @@
 ﻿using Asp.Versioning;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Service.Dtos.Candidate.Request;
-using Service.Dtos.Candidate.Response;
+using Voting_API.Service.Dtos.Candidate.Request;
+using Voting_API.Service.Dtos.Candidate.Response;
 using Swashbuckle.AspNetCore.Filters;
 using System.Net;
 using Voting_API.Examples;

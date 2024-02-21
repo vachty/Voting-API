@@ -1,7 +1,7 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Service.Dtos;
-using Service.Results;
+using Voting_API.Service.Dtos;
+using Voting_API.Service.Results;
 
 namespace Voting_API.Controllers
 {

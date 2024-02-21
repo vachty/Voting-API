@@ -1,6 +1,7 @@
-using Service.Handlers;
+using Voting_API.Service.Handlers;
 using System.Reflection;
 using Voting_API.Extensions;
+using Voting_API.Service.Mappers;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,7 +14,7 @@ builder.Services.AddEndpointsApiExplorer();
  * Dependency injection
  */
 builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(typeof(BaseHandler<,>).GetTypeInfo().Assembly));
-builder.Services.AddAutoMapper(Assembly.GetAssembly(typeof(Service.Mappers.DomainToDtoMappingProfile)));
+builder.Services.AddAutoMapper(Assembly.GetAssembly(typeof(DomainToDtoMappingProfile)));
 builder.Services.RegisterServices();
 
 //add the database

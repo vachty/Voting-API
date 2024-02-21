@@ -1,4 +1,4 @@
-﻿using Infrastructure.Database;
+﻿using Electing_API.Database;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
 using Asp.Versioning;
@@ -20,12 +20,12 @@ namespace Electing_API.Extensions
             if (services == null)
                 throw new ArgumentNullException(nameof(services));
 
-            services.AddDbContext<VotingApiDbContext>(options =>
+            services.AddDbContext<ElectionApiDbContext>(options =>
             {
                 options.UseSqlServer(configuration.GetConnectionString("Api"),
                     sqlOptions =>
                     {
-                        sqlOptions.MigrationsAssembly(typeof(VotingApiDbContext).GetTypeInfo().Assembly.GetName().Name);
+                        sqlOptions.MigrationsAssembly(typeof(ElectionApiDbContext).GetTypeInfo().Assembly.GetName().Name);
                         sqlOptions.EnableRetryOnFailure(5);
                     });
             });

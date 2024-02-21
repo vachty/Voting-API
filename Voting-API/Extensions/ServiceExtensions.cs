@@ -1,4 +1,4 @@
-﻿using Infrastructure.Database;
+﻿using Voting_API.Database;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
 using Asp.Versioning;

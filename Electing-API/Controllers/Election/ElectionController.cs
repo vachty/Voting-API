@@ -1,10 +1,8 @@
 ﻿using Asp.Versioning;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Service.Dtos.Candidate.Request;
-using Service.Dtos.Candidate.Response;
-using Service.Dtos.Election.Request;
-using Service.Dtos.Election.Response;
+using Electing_API.Service.Dtos.Election.Request;
+using Electing_API.Service.Dtos.Election.Response;
 using Swashbuckle.AspNetCore.Filters;
 using System.Net;
 

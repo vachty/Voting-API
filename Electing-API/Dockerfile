@@ -3,16 +3,13 @@
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
 USER app
 WORKDIR /app
-EXPOSE 8080
-EXPOSE 8081
+EXPOSE 80
+EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
 COPY ["Electing-API/Electing-API.csproj", "Electing-API/"]
-COPY ["Infrastructure/Infrastructure.csproj", "Infrastructure/"]
-COPY ["Domain/Domain.csproj", "Domain/"]
-COPY ["Service/Service.csproj", "Service/"]
 RUN dotnet restore "./Electing-API/Electing-API.csproj"
 COPY . .
 WORKDIR "/src/Electing-API"

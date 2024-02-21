@@ -1,4 +1,4 @@
-﻿using Service.Dtos.Candidate.Request;
+﻿using Voting_API.Service.Dtos.Candidate.Request;
 using Swashbuckle.AspNetCore.Filters;
 
 namespace Voting_API.Examples
